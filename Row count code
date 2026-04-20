@@ -1,0 +1,10 @@
+# count_rows.py
+
+import csv
+
+# Open CSV file and count rows
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    row_count = sum(1 for row in reader)
+
+print("Total rows in CSV file:", row_count)
