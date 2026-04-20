@@ -1,0 +1,21 @@
+# json_to_csv.py
+
+import json
+import csv
+
+# Read JSON data
+with open("data.json", "r") as json_file:
+    data = json.load(json_file)
+
+# Write data into CSV file
+with open("data.csv", "w", newline="") as csv_file:
+    writer = csv.writer(csv_file)
+
+    # Write headers
+    writer.writerow(data[0].keys())
+
+    # Write rows
+    for row in data:
+        writer.writerow(row.values())
+
+print("JSON converted to CSV successfully!")
